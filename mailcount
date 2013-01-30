@@ -1,0 +1,15 @@
+#!/bin/sh
+
+LOG="/var/log/mailcount.log"
+
+if [ `/usr/local/sh/mdt 1 | grep messages | cut -d' ' -f4` = "in" ]; then
+	echo L: `/usr/local/sh/mdt 1 | grep messages | cut -d' ' -f1`/`/usr/local/sh/mdt 1 | grep messages | cut -d' ' -f7` > $LOG
+else
+	echo L: `/usr/local/sh/mdt 1 | grep messages | cut -d' ' -f1`/`/usr/local/sh/mdt 1 | grep messages | cut -d' ' -f4` > $LOG
+fi
+if [ `/usr/local/sh/mdt 2 | grep messages | cut -d' ' -f4` = "in" ]; then
+	echo T: `/usr/local/sh/mdt 2 | grep messages | cut -d' ' -f1`/`/usr/local/sh/mdt 2 | grep messages | cut -d' ' -f7` >> $LOG
+else
+	echo T: `/usr/local/sh/mdt 2 | grep messages | cut -d' ' -f1`/`/usr/local/sh/mdt 2 | grep messages | cut -d' ' -f4` >> $LOG
+fi
+#>> /var/log/mailcount #`/usr/local/sh/mdt 2 | grep messages | cut -d' ' -f1`/`/usr/local/sh/mdt 1 | grep messages | cut -d' ' -f7`

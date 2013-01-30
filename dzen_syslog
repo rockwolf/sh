@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# config
+BGCOLOR="black"
+FGCOLOR="cyan"
+WIDTH=840
+XPOS=$[1280-$WIDTH]
+YPOS=15
+BEHAVIOR='sigusr1=raise;sigusr2=lower;onexit=exec:rm /tmp/dzen2-pid;button2=exit' 
+
+
+echo $! > /tmp/dzen2-pid
+while :;
+do
+	echo "`tail /var/log/messages`"
+	sleep 3
+done | dzen2 -l 5 -fn '-*-dina-*-*-*-*-*-*-*-*-*-*-*' -bg $BGCOLOR -fg $FGCOLOR -ta l -x $XPOS -y $YPOS -p -w $WIDTH -e $BEHAVIOUR & 

@@ -1,0 +1,10 @@
+#!/bin/sh
+totsize=0
+for X in *.wav; do
+size=`ls -l ${X} | awk -F " " '{print $5}'`
+echo "$X : $size"
+   totsize=`expr ${totsize} + ${size}`
+done
+echo
+echo "Total size of .wav-files:  $totsize"
+echo

@@ -1,0 +1,46 @@
+#!/bin/sh
+# Author : Rockwolf
+# Date : 17 March 2008
+# beeper : bash script that helps to keep track of time while stretching
+
+## Settings ##
+
+# Init timeout in seconds
+BEGIN_TIMEOUT=20
+
+# Both durations below are in seconds
+TIME_STRETCH=60
+TIME_BREAK=20
+
+# TIME_TOTSTRETCH = total in minutes you stretch, breaks between stretches NOT included!
+TIME_TOTSTRETCH=15 
+
+# Soundfiles
+SND_START="/mnt/F/rockwolf/wavsounds/20th_century_fox.wav"
+SND_STOP="/mnt/F/rockwolf/wavsounds/hallelujah.wav"
+SND_STARTSTRETCH="/mnt/F/rockwolf/wavsounds/huuuh.wav"
+SND_STOPSTRETCH="/mnt/F/rockwolf/wavsounds/ohyeah.wav"
+
+## NO NEED TO EDIT BEYOND THIS POINT ##
+tot=0
+
+echo "Starting session in $BEGIN_TIMEOUT seconds..."
+sleep $BEGIN_TIMEOUT
+play $SND_START
+play $SND_STARTSTRETCH
+while true; do
+	sleep $TIME_STRETCH
+	echo "1 minute has passed..."
+	let tot=$tot+1
+	echo "Total passed: $tot."
+	play $SND_STOPSTRETCH
+	if [ $tot -eq $TIME_TOTSTRETCH ]; 
+	then
+		echo "The session is over. You heve stretched for a total of $tot minutes."
+		play $SND_STOP
+		exit
+	fi
+	echo "$TIME_BREAK second break..."
+	sleep $TIME_BREAK
+	play $SND_STARTSTRETCH
+done

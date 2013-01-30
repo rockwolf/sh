@@ -1,0 +1,64 @@
+#!/bin/sh
+#
+# Author: rockwolf
+# Date: 2010-12-29
+# 
+# Creates a backup of the tst dir
+#
+
+DIR=/home/rockwolf/tst
+
+fBackupWeekly()
+{
+    OLDDIR=/mnt/D/bak/tst/weekly/old
+    NEWDIR=/mnt/D/bak/tst/weekly/new
+    
+    fBackup $OLDDIR $NEWDIR
+    echo "tst - weekly backup [OK]"
+}
+
+fBackup()
+{
+    ### remove previous bak-ups
+    rm $OLDDIR/*.tar.gz
+
+    ### move current backup from new to old
+    mv $NEWDIR/*.tar.gz $OLDDIR
+
+    ### make backup
+    tar czf $NEWDIR/tst`date +%Y-%m-%d`.tar.gz $DIR
+}
+
+fBackupMonthly()
+{
+    OLDDIR=/mnt/D/bak/tst/monthly/old
+    NEWDIR=/mnt/D/bak/tst/monthly/new
+    
+    fBackup $OLDDIR $NEWDIR
+    echo "tst - monthly backup [OK]"
+}
+
+
+fUsage()
+{
+    echo "Usage: bu-tst"
+    exit 1
+}
+
+case $# in
+0)
+    DOW=`date +%u`
+    DOM=`date +%d`
+    if [ "$DOW" = "1" ];
+    then
+        fBackupWeekly
+    fi
+    if [ "$DOM" = "01" ];
+    then
+        fBackupMonthly
+    fi
+    ;;
+*)
+    fUsage
+    ;;
+esac

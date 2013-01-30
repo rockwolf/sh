@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for cpu in :; do
+(while true;do true; done)&
+done

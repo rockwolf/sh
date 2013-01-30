@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# config
+BGCOLOR="black"
+FGCOLOR="cyan"
+WIDTH=640
+XPOS=0
+YPOS=15
+BEHAVIOR='sigusr1=raise;sigusr2=lower;onexit=exec:rm /tmp/dzen2-pid;button3=exit' 
+
+
+#echo $! > /tmp/dzen2-pid
+	tail -f $HOME/.irssi_pipe | dzen2 -l 3 -fn '-*-aqui-*-*-*-*-*-*-*-*-*-*-*' -bg $BGCOLOR -fg $FGCOLOR -ta l -x $XPOS -y $YPOS -p -w $WIDTH -e $BEHAVIOUR & 
+
+
+#trigger: /trigger ADD -publics -pattern 'rock' -command 'exec echo -e "$C ($N) $N: $M" > $HOME/.irssi_pipe'

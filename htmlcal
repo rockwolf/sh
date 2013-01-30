@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Author: Rockwolf
+# Date: 29/04/2008
+# pdfcal uses remind, rem2html to create a nice calendar for
+# the current month in html-format
+
+#vars
+DIR="/home/rockwolf/.remind"
+
+echo "Creating html calendar in $DIR"
+rem -mps -c3 | rem2html > $DIR/calendar.html
+echo "Done."

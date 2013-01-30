@@ -1,0 +1,46 @@
+#!/bin/zsh
+#
+# ircus: IRC User Switcher
+# zsh script
+# Author: Rockwolf
+# Date: 2010-12-08
+# export a CONTACT or SERVERIRC value
+# to be used with ii in combination with
+# vim as a front-end
+# vim mapping:
+# map cu :.w >> $HOME/$SERVERIRC/$CONTACT/in
+
+setContact()
+{
+    export CONTACT=$1
+    sleep 30
+}
+setServer()
+{
+    export SERVERIRC=$1
+}
+
+LOCAL="localhost"
+
+case $# in
+1)    
+    echo "Exporting CONTACT=$1"
+    setContact $1    
+    echo "Exporting SERVERIRC=$LOCAL"
+    setServer $LOCAL
+    ;;
+2)
+    echo "Exporting CONTACT=$1"
+    setContact $1
+    echo "Exporting SERVERIRC=$2"
+    setServer $2        
+    ;;
+*)
+    echo "Usage: ircus <username> [<servername>]"
+    exit 1;
+    ;;
+esac
+
+echo "Done."
+
+# end

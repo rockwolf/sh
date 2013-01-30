@@ -1,0 +1,25 @@
+ #!/bin/bash
+ RESOLUTIONX=1280
+ RESOLUTIONY=800
+ FONTWIDTH=6
+ FONTHEIGHT=13
+ BORDERX=13
+ BORDERY=6
+
+ OPTIONS="-p 15 -ta l -sa l -fn fixed -e onstart=uncollapse;button1=exit;button2=exit;button3=exit"
+ OUTPUT=`mktemp`
+ $* >$OUTPUT
+
+ H=`wc -l <$OUTPUT`
+ W=`wc -L <$OUTPUT`
+ N=`echo $H - 1 | bc`
+ WIDTH=`echo  $BORDERX '+' $FONTWIDTH  '*' $W | bc`
+ HEIGHT=`echo $BORDERY '+' $FONTHEIGHT '*' $H | bc`
+ X=20
+ #`echo '(' $RESOLUTIONX - $WIDTH ')'  / 2 | bc`
+ Y=20
+ #`echo '(' $RESOLUTIONY - $HEIGHT ')' / 2 | bc`
+
+ dzen2 -l $N -x $X -y $Y -w $WIDTH $OPTIONS <$OUTPUT
+ rm $OUTPUT
+

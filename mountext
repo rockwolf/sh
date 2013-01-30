@@ -1,0 +1,35 @@
+#!/bin/bash
+
+MINARGS=2          # Script requires at least two arguments.
+E_BADARGS=65
+
+show_error(){
+echo
+echo "usage: mountext, it's that simple."
+}
+
+for i in 1 2 3 
+do
+echo
+echo "mounting external harddisk partition $i"
+mount /mnt/E"$i"
+echo "done"
+done
+# Checks number of arguments.
+#if [ $# -ne $MINARGS  ]; 
+#then
+#show_error
+#exit $E_BADARGS
+#fi
+
+#edn=$1
+#uc=$2
+
+#if [ "$in" -eq "$ref" ]
+	#mount command?
+#elif [ "$in" -eq "$ref2" ]
+#then
+#	#mount command?
+#else
+#	show_error
+#fi

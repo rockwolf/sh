@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# set the earthwallpaper via cron
+
+OTHERDIR=/home/rockwolf/.earthwallpaper
+
+
+DISPLAY=:0.1 /usr/bin/feh --bg-scale $OTHERDIR/world_sunlight_Wallpaper.jpg

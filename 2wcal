@@ -1,0 +1,29 @@
+#!/bin/sh
+#vnstat -m | grep `date +%b` >> /home/rockwolf/.vnstatlog 
+
+#VNSTATLOG="/home/rockwolf/.vnstatlog"
+TMPFILE="2wcal"
+TMPPATH="/var/tmp/"
+
+
+touch $TMPPATH$TMPFILE
+#while true
+#do
+
+	# 2 week calendar
+	remind -c+2 -b1 -m ~/.reminders > $TMPPATH$TMPFILE
+#	`xrootconsole -geometry 95x24+750+500 $TMPPATH$TMPFILE` &
+
+	# download bw
+#	vnstat > $VNSTATLOG
+#	echo >>  $VNSTATLOG
+#	echo -n `vnstat -m | grep "$DLMONTH"` >> $VNSTATLOG
+#	`xrootconsole -geometry 55x14+0+500 $VNSTATLOG` &
+
+	# pause and repeat
+#	sleep 30
+#	`killall xrootconsole` > /dev/null &
+#done
+
+#temp file does not get deleted
+#rm $TMPPATH$TMPFILE

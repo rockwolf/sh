@@ -1,0 +1,16 @@
+#!/bin/sh
+
+SRCDIR="/home/rockwolf/.config/clipf/db"
+NEWDIR="/mnt/D/bak/finance/new"
+OLDDIR="/mnt/D/bak/finance/old"
+
+### remove old files
+rm $OLDDIR/*.tar.gz
+
+### move current backup to olddir
+mv $NEWDIR/*.tar.gz $OLDDIR
+
+### create backup
+cp $SRCDIR/op $NEWDIR/op`date +%Y-%m-%d`
+tar czf $NEWDIR/op`date +%Y-%m-%d`.tar.gz $NEWDIR/op`date +%Y-%m-%d`
+rm  $NEWDIR/op`date +%Y-%m-%d`

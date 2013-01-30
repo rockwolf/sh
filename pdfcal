@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Author: Rockwolf
+# Date: 29/04/2008
+# pdfcal uses remind, rem2ps and ps2pdfwr to create a nice calendar for
+# the current month in pdf-format
+
+#vars
+DIR="/home/rockwolf/.remind"
+MONTH=`date +%B`
+YEAR=`date +%Y`
+
+WHEN=$MONTH' '$YEAR
+
+echo $WHEN
+echo "Creating pdf calendar in $DIR"
+`rem -mps -c3  | rem2ps -e -m A4 > $DIR/tmp.ps` && ps2pdfwr $DIR/tmp.ps $DIR/calendar.pdf && rm -fv $DIR/tmp.ps
+echo "Creating empty pdf calendar in $DIR"
+`remind -p12 /dev/null $WHEN  | rem2ps -e -m A4 > $DIR/tmp2.ps` && ps2pdfwr $DIR/tmp2.ps $DIR/emptycal.pdf && rm -fv $DIR/tmp2.ps
+echo "Done."

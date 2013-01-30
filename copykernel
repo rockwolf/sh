@@ -1,0 +1,6 @@
+#!/bin/bash
+kernelversion=-2.6.23
+
+cp arch/i386/boot/bzImage /boot/kernel$kernelversion -v
+cp .config /boot/config$kernelversion -v
+cp System.map /boot/System.map$kernelversion -v

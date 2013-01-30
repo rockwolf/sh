@@ -1,0 +1,31 @@
+#!/bin/sh
+
+URL1=http://twitter.com/statuses/user_timeline/55410332.rss
+#URL2=http://twitter.com/statuses/user_timeline/8543972.rss
+URL4=http://www.binck.com/gekko/rss/headlines.aspx?language=nl-BE
+URL5=http://www.binck.com/gekko/rss/news.aspx?language=nl-BE
+URL6=http://www.archlinux.org/feeds/news
+URL7=http://www.lier.be/rss.jsp?objectid=92
+URL8=http://feeds2.feedburner.com/webupd8
+URL9="https://github.com/rockwolf/lisa/commits/master.atom"
+URLA="https://github.com/rockwolf/jenny/commits/master.atom"
+URLB="https://github.com/rockwolf/pyqt_generic/commits/master.atom"
+URLC=""
+
+multitail -Z cyan -s 2 -sn 4,4, \
+-t "mailfeed.log" /var/log/mailfeed.log \
+-t "messages.log" /var/log/messages.log \
+-t "Binck" -cS rsstail -l "rsstail -P -n 8 -z -u $URL4" \
+-t "lisa commit" -cS rsstail -l "rsstail -P -n 10 -z -u $URL9" \
+-t "im.log" /var/log/im.log \
+-t "userapps.log" /var/log/userapps.log \
+-t "jenny commit" -cS rsstail -l "rsstail -n 10 -z -u $URLA" \
+-t "pyqt_generic commit" -cS rsstail -l "rsstail -n 10 -z -u $URLB"
+#-cS rsstail -l "rsstail -n 4 -z -u $URLC"
+#-t "todo.txt" /home/rockwolf/doc/todo/todo.txt
+#-t "DB" -cS rsstail -l "rsstail -P -n 4 -z -u $URL2" \
+#-t "WebUpd8" -cS rsstail  -l "rsstail -P -n 6 -z -u $URL8" \
+#-t "Taka" -cS rsstail -l "rsstail -P -n 4 -z -u $URL1" \
+#-cS rsstail -l "rsstail -n 4 -z -u $URL7"
+#-cS rsstail -l "rsstail -n 3 -z -u $URL5" \
+#-cS rsstail -l "rsstail -n 4 -z -u $URL3" \

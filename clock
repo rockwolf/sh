@@ -1,0 +1,3 @@
+#!/bin/sh
+COLOR=darkgreen
+oclock -fg $COLOR -jewel $COLOR -minute $COLOR -hour $COLOR -bd $COLOR -bw 0 -transparent

@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# commre: Communication's Regular Expression
+# Author: Andy Nagels
+# Date: 2010-12-09
+#
+# This script was designed to be used with
+# the irc client ii (http://tools.suckless.org/ii)
+# Scans for lines in output files of ii
+
+### VARIABLES ###
+# Here, you can set the output file
+OUTFILE="/var/log/im.log" 
+# this is a temporay file that is needed while
+# running the script, it's automatically deleted
+# when the script finishes
+# default: <scriptname>.tmp
+TMPFILE="${0//[^[:alnum:]]/}.tmp" 
+# your ii irc folder
+IIMAIN=./ #$HOME/irc/
+# here you can set regular expressions to look for in
+# specific files
+#
+# REGEXP1: it may not include the string <TEST>
+# REGEXP2: it must contain either test, Test, TEST, teSt or set
+# REGEXPCOMBO: a trick to combine them both and execute them on outfiles
+REGEXP1="[^<rockwolf>]"
+REGEXP2="(rock|ROCK|ROck|roCK|RocK|rOCk|rOCK|RoCK|ROcK|ROCk|RoCk|rOcK|Rock|rOck|roCk|rocK)"
+
+### MAIN CODE ###
+# echo "Find data based on regular expressions..."
+egrep -h $REGEXP2 $IIMAIN/*/out $IIMAIN/*/*/out > $TMPFILE 
+egrep -h $REGEXP1 $TMPFILE > $OUTFILE
+# echo "Remove temporary file..."
+rm $TMPFILE
+# echo "Done."

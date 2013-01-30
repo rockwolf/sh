@@ -1,0 +1,74 @@
+#!/bin/sh
+#
+# Author: rockwolf
+# Date: 2010-12-29
+# 
+# Creates a backup of the doc dir
+#
+
+DIR=/home/rockwolf/doc
+
+fBackupDaily()
+{
+    OLDDIR=/mnt/D/bak/doc/daily/old
+    NEWDIR=/mnt/D/bak/doc/daily/new
+    
+    fBackup $OLDDIR $NEWDIR
+    echo "doc - daily backup [OK]"
+}
+
+fBackupWeekly()
+{
+    OLDDIR=/mnt/D/bak/doc/weekly/old
+    NEWDIR=/mnt/D/bak/doc/weekly/new
+    
+    fBackup $OLDDIR $NEWDIR
+    echo "doc - weekly backup [OK]"
+}
+
+fBackup()
+{
+    ### remove previous bak-ups
+    rm $OLDDIR/*.tar.gz
+
+    ### move current backup from new to old
+    mv $NEWDIR/*.tar.gz $OLDDIR
+
+    ### make backup
+    tar czf $NEWDIR/doc`date +%Y-%m-%d`.tar.gz $DIR
+}
+
+fBackupMonthly()
+{
+    OLDDIR=/mnt/D/bak/doc/monthly/old
+    NEWDIR=/mnt/D/bak/doc/monthly/new
+    
+    fBackup $OLDDIR $NEWDIR
+    echo "doc - monthly backup [OK]"
+}
+
+
+fUsage()
+{
+    echo "Usage: bu-doc"
+    exit 1
+}
+
+case $# in
+0)
+    DOW=`date +%u`
+    DOM=`date +%d`
+    fBackupDaily
+    if [ "$DOW" = "1" ];
+    then
+        fBackupWeekly
+    fi
+    if [ "$DOM" = "01" ];
+    then
+        fBackupMonthly
+    fi
+    ;;
+*)
+    fUsage
+    ;;
+esac

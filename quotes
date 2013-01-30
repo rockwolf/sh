@@ -1,0 +1,3 @@
+#!/bin/sh
+QUOTE=`python /home/rockwolf/dev/py/quotes/quotes.py`
+xsetroot -name "$QUOTE"

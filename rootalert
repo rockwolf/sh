@@ -1,0 +1,3 @@
+#!/bin/sh
+root-tail --shade -f -wordwrap -noinitial -whole -color yellow  -g 250x186+750+710 /home/rockwolf/.alertlog
+#root-tail -font fixed -f -wordwrap -noinitial -whole -color gray  -g 1024x41+0+487 /var/log/shorewall.log
