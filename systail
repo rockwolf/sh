@@ -9,7 +9,7 @@ URL7=http://www.lier.be/rss.jsp?objectid=92
 URL8=http://feeds2.feedburner.com/webupd8
 URL9="https://github.com/rockwolf/lisa/commits/master.atom"
 URLA="https://github.com/rockwolf/jenny/commits/master.atom"
-URLB="https://github.com/rockwolf/pyqt_generic/commits/master.atom"
+URLB="https://github.com/rockwolf/haskell/commits/master.atom"
 URLC=""
 
 multitail -Z cyan -s 2 -sn 4,4, \

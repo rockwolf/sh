@@ -40,6 +40,7 @@ radiostations = {#name:(address,homepage),
         'hardrock' :('http://www.loudcity.com/launch?file=pls&id=3136&playid=6253201207171309053136', 'HRRL'),
         'nihon' :('http://radio.kahoku.net:8000/listen.pls',
             'kohaku'),
+        'anime' :('http://momori.animenfo.com:8000/listen.pls', 'AnimeNFO'),
         'rockabilly'
         :('http://www.loudcity.com/launch?file=pls&id=3791&playid=6253201207040829393791',
             'rockabilly'),
