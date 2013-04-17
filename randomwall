@@ -2,7 +2,7 @@
 
 shopt -s nullglob
  
-cd ~/arc/img/wall/nihongo
+cd ~/img/wall/nihongo
 
 while true; do
     files=()
