@@ -8,5 +8,15 @@ HOST01="miniramp"
 HOME01=$HOME00
 
 ## Sync from evy (00) to miniramp (01)
-echo "rsync -r -e ssh "$HOME00"/irc "$USER01"@"$HOST01":"$HOME01
-rsync -r -e ssh $HOME00/irc $USER01"@"$HOST01":"$HOME01
+echo "rsync -u -p -l -r -e ssh "$HOME00"/irc "$USER01"@"$HOST01":"$HOME01
+rsync -u -p -l -r -e ssh $HOME00/irc $USER01"@"$HOST01":"$HOME01
+echo "rsync -u -p -l -r -e ssh "$HOME00"/doc "$USER01"@"$HOST01":"$HOME01
+rsync -u -p -l -r -e ssh $HOME00/doc $USER01"@"$HOST01":"$HOME01
+echo "rsync -u -p -l -r -e ssh "$HOME00"/arc "$USER01"@"$HOST01":"$HOME01
+rsync -u -p -l -r -e ssh $HOME00/arc $USER01"@"$HOST01":"$HOME01
+echo "rsync -u -p -l -r -e ssh "$HOME00"/biz "$USER01"@"$HOST01":"$HOME01
+rsync -u -p -l -r -e ssh $HOME00/biz $USER01"@"$HOST01":"$HOME01
+echo "rsync -u -p -l -r -e ssh "$HOME00"/trade "$USER01"@"$HOST01":"$HOME01
+rsync -u -p -l -r -e ssh $HOME00/trade $USER01"@"$HOST01":"$HOME01
+echo "rsync -u -p -l -r -e ssh "$HOME00"/img "$USER01"@"$HOST01":"$HOME01
+rsync -u -p -l -r -e ssh $HOME00/img $USER01"@"$HOST01":"$HOME01
