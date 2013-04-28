@@ -1,0 +1,12 @@
+#!/bin/sh
+
+USER00="rockwolf"
+HOST00="evy"
+HOME00="/home/rockwolf/"
+USER01=$USER00
+HOST01="miniramp"
+HOME01=$HOME00
+
+## Sync from evy (00) to miniramp (01)
+echo "rsync -r -e ssh "$HOME00"/irc "$USER01"@"$HOST01":"$HOME01
+rsync -r -e ssh $HOME00/irc $USER01"@"$HOST01":"$HOME01
