@@ -1,9 +1,0 @@
-#!/bin/sh
-rm -i /etc/conf.d/net
-echo -e "update conf.d/net\n"
-ln -s /etc/conf.d/net_home /etc/conf.d/net
-echo -e "start eth0\n"
-/etc/init.d/net.eth0 start
-echo -e "updating xorg.conf"
-rm -i /etc/X11/xorg.conf
-ln -s /etc/X11/xorg_xinerama.conf /etc/X11/xorg.conf
