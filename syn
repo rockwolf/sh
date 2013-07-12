@@ -18,5 +18,9 @@ echo "rsync -u -p -l -r -e ssh "$HOME00"/biz "$USER01"@"$HOST01":"$HOME01
 rsync -u -p -l -r -e ssh $HOME00/biz $USER01"@"$HOST01":"$HOME01
 echo "rsync -u -p -l -r -e ssh "$HOME00"/trade "$USER01"@"$HOST01":"$HOME01
 rsync -u -p -l -r -e ssh $HOME00/trade $USER01"@"$HOST01":"$HOME01
-echo "rsync -u -p -l -r -e ssh "$HOME00"/img "$USER01"@"$HOST01":"$HOME01
-rsync -u -p -l -r -e ssh $HOME00/img $USER01"@"$HOST01":"$HOME01
+echo "rsync -u -p -l -r -e ssh "$HOME00"/vms "$USER01"@"$HOST01":"$HOME01
+rsync -u -p -l -r -e ssh $HOME00/vms $USER01"@"$HOST01":"$HOME01
+echo "rsync -u -p -l -r -e ssh "$HOME00"/sh_ "$USER01"@"$HOST01":"$HOME01
+rsync -u -p -l -r -e ssh $HOME00/sh_ $USER01"@"$HOST01":"$HOME01
+echo "rsync -u -p -l -r -e ssh "$HOME00"/rc_ "$USER01"@"$HOST01":"$HOME01
+rsync -u -p -l -r -e ssh $HOME00/rc_ $USER01"@"$HOST01":"$HOME01
