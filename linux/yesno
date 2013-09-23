@@ -1,2 +1,2 @@
 #!/bin/sh
-python2 /home/rockwolf/dev/py/yesno/yesno.py
+python2 /home/rockwolf/dev/python/yesno/yesno.py
