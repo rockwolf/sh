@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Author: Rockwolf
+# Date: 2013-08-12
+# Function:
+# Convert markdown to hmtl + view in elinks
+# Note:
+# Requires pandoc and elinks
+
+### Convert markdown input $1 to html
+OUT = /var/log/tmp
+pandoc -f markdown -t html $1 >> $OUT/$1.html
+
+### View generated html in elinks
+# lynx --dump myfile.html
+elinks --dump $OUT/$1.html
+
+### Remove generated html
+rm -i $OUT/$1.html
