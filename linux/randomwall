@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 shopt -s nullglob
  
-cd ~/wall/nihongo
+cd ~/wall
 
 while true; do
     files=()
