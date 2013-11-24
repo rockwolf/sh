@@ -7,9 +7,9 @@ URL5=http://www.binck.com/gekko/rss/news.aspx?language=nl-BE
 URL6=http://www.archlinux.org/feeds/news
 URL7=http://www.lier.be/rss.jsp?objectid=92
 URL8=http://feeds2.feedburner.com/webupd8
-URL9="https://github.com/rockwolf/lisa/commits/master.atom"
-URLA="https://github.com/rockwolf/jenny/commits/master.atom"
-URLB="https://github.com/rockwolf/haskell/commits/master.atom"
+URL9="https://github.com/rockwolf/python/commits/master.atom"
+URLA="https://github.com/rockwolf/python_generic/commits/master.atom"
+URLB="https://github.com/rockwolf/c/commits/master.atom"
 URLC=""
 
 multitail -Z cyan -s 2 -sn 3,3, \

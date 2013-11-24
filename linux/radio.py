@@ -37,7 +37,9 @@ from optparse import OptionParser
 
 radiostations = {#name:(address,homepage),
 		'radio2' :('http://mp3.streampower.be/ra2ant-mid.mp3', 'radio 2 - antwerpen'),
-        'hardrock' :('http://www.loudcity.com/launch?file=pls&id=3136&playid=6253201207171309053136', 'HRRL'),
+        'brasil' :('http://189.1.162.125:8450', 'Rádio Brasil 2000'),
+        'rio' :('http://99.198.112.59:80', 'Paul in Rio'),
+        'brasil99' :('http://189.8.108.38:8000', 'Rádio Transamérica 99.7FM'),
         'nihon' :('http://radio.kahoku.net:8000/listen.pls',
             'kohaku'),
         'anime' :('http://momori.animenfo.com:8000/listen.pls', 'AnimeNFO'),
@@ -110,7 +112,8 @@ def main(options, args):
     if radiostations[args[0]][0][-4:] in ('.asx','.ram', '.pls'):
         playlist='-playlist'
     
-    execargs=['mplayer', '-softvol', '-cache', cache, playlist, radiostations[args[0]][0] ]
+    #execargs=['mplayer', '-softvol', '-cache', cache, playlist, radiostations[args[0]][0] ]
+    execargs=['mplayer', radiostations[args[0]][0] ]
     if options.sleep > 0:
         print("Radio will go to sleep in", options.sleep, "minutes")
         pid = subprocess.Popen(execargs).pid

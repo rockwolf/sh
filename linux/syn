@@ -2,7 +2,7 @@
 
 USER00="rockwolf"
 HOST00="evy"
-HOME00="/home/rockwolf/"
+HOME00="/home/rockwolf"
 USER01=$USER00
 HOST01="miniramp"
 HOME01=$HOME00
