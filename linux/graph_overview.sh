@@ -18,7 +18,7 @@ case $# in
     ledger -f $1 -t -a -Y -c -R -n -J reg ^income > $DAT_INCOME 
     ledger -f $1 -Y -c -R -n -j reg ^expenses > $DAT_EXPENSES 
     ./$PLOT.sh > ./$PLOT.png
-    feh ./$PLOT.png
+    feh -ZF ./$PLOT.png
     ;;
 *)
     Usage

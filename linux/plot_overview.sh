@@ -5,7 +5,7 @@ reset
 set terminal png
 
 ### Title
-set title "Income, expenses and net worth per month"
+set title "Income, expenses and net worth per year"
 
 ### X-axis
 set xlabel "Year"
