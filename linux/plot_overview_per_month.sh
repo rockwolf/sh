@@ -10,11 +10,12 @@ set title "Income, expenses and net worth per month"
 ### X-axis
 set xlabel "Date (month/year)"
 set xdata time
-set timefmt "%Y-%m"
+set timefmt "%Y-%m-%d"
 #"%Y-%m-%dT%H:%M:%S"
 set format x "%m/%y"
-#set xrange[:]
+#set xrange["2008-01-01":"2014-01-01"]
 #set xtics "%m/%y"
+#set xtics "2008-01-01",2592000,"2014-01-01"
 set xtics rotate by -45
 
 ### Y-axis
@@ -24,8 +25,10 @@ set grid
 set yrange[*:*]
 
 ### Histogram options
-set boxwidth 0.1
-#set style fill solid 1 border 0
+# Note: When using time-data, the x-axis is in seconds!
+# The below sets the bars to be 3600*24*<num> = <num> days in length
+set boxwidth 3600*24*7
+set style fill solid 1 border 0
 set style histogram gap 2
 set style data histogram
 set bars 0.1
