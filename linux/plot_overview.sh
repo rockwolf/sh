@@ -35,4 +35,4 @@ set object 1 rectangle from screen 0,0 to screen 1,1 fillcolor rgb "#ffffd7" beh
 
 ### Plot
 # Note: Using vars here for the filenames does not work for some reason!
-plot "gnuplot_expenses.dat" using 1:2 title "Expenses" fillcolor rgb "#d70000" with boxes, "gnuplot_income.dat" using 1:2 title "Income" fillcolor rgb "#5f8700" with boxes, "gnuplot_net-worth.dat" using 1:2 title "Net worth" with lines, 0 with lines
+plot "gnuplot_expenses.dat" using 1:2 title "Expenses" fillcolor rgb "#d70000" with boxes, "gnuplot_income.dat" using 1:2 title "Income" fillcolor rgb "#5f8700" with boxes, "gnuplot_net-worth.dat" using 1:2 title "Net worth" with lines, 0 linecolor rgb "#1c1c1c" with lines, 12000 linecolor rgb "#d70000" with lines
