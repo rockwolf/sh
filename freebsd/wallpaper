@@ -23,7 +23,7 @@ PACDIR=/home/rockwolf/doc/current/wallpapers/pacgraph
 #bleach/yoruichi.jpg
 
 #DISPLAY=:0.0 /usr/bin/feh --bg-scale $OTHERDIR/dreamforest_3360x1050.jpg
-feh --bg-scale $OTHERDIR/Momiji_Daigoji4.JPG
+feh --bg-scale $OTHERDIR/quotation__syrio_forel___arya_stark_by_elernie-d5yo7j0.jpg
 #DISPLAY=:0.1 /usr/bin/feh --bg-scale $WALLDIR/Hokkaido3.jpg
 #DISPLAY=:0.1 /usr/bin/feh --bg-scale $OTHERDIR/1440_900_20091116100708821363.jpg
 #Shore22880x900.jpg
