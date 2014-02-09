@@ -17,7 +17,7 @@ case $# in
     ledger -f $1 --begin "$2/01/01" --end "$2/12/31" -M -c -R -n -J reg ^assets ^liabilities > $DAT_NET_WORTH 
     ledger -f $1 --begin "$2/01/01" --end "$2/12/31" -t -a -M -c -R -n -j reg ^income > $DAT_INCOME 
     ledger -f $1 --begin "$2/01/01" --end "$2/12/31" -M -c -R -n -j reg ^expenses > $DAT_EXPENSES 
-    ./$PLOT.sh > ./$PLOT.png
+    $PLOT.sh > ./$PLOT.png
     feh ./$PLOT.png &
     ;;
 *)
