@@ -1,4 +1,4 @@
-#!/usr/bin/gnuplot
+#!/usr/local/bin/gnuplot
 
 ### Init
 reset
