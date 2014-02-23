@@ -8,11 +8,13 @@ Usage()
 }
 
 case $# in
-1) 
-    ledger -f $1 --pendantic -M register expenses:$2
+1)
+    #ledger -f $1 --pendantic -M register expenses
+    ledger -f $1 register --monthly -Equity -^Assets expenses
     ;;
-2)
-    ledger -f $1 --pendantic -M register expenses
+2) 
+    #ledger -f $1 --pendantic -M register expenses:$2
+    ledger -f $1 register --monthly -Equity -^Assets expenses:$2
     ;;
 *)
     Usage()
