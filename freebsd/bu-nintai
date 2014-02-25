@@ -1,0 +1,74 @@
+#!/bin/sh
+#
+# Author: rockwolf
+# Date: 2010-12-29
+#
+# Creates a backup of the nintai dir
+#
+
+DIR=/home/rockwolf/nintai
+
+fBackupDaily()
+{
+    OLDDIR=/mnt/bak/nintai/daily/old
+    NEWDIR=/mnt/bak/nintai/daily/new
+    
+    fBackup $OLDDIR $NEWDIR
+    echo "nintai - daily backup [OK]"
+}
+
+fBackupWeekly()
+{
+    OLDDIR=/mnt/D/bak/nintai/weekly/old
+    NEWDIR=/mnt/D/bak/nintai/weekly/new
+    
+    fBackup $OLDDIR $NEWDIR
+    echo "nintai - weekly backup [OK]"
+}
+
+fBackup()
+{
+    ### remove previous bak-ups
+    rm $OLDDIR/*.tar.gz
+
+    ### move current backup from new to old
+    mv $NEWDIR/*.tar.gz $OLDDIR
+
+    ### make backup
+    tar czf $NEWDIR/doc`date +%Y-%m-%d`.tar.gz $DIR
+}
+
+fBackupMonthly()
+{
+    OLDDIR=/mnt/bak/nintai/monthly/old
+    NEWDIR=/mnt/bak/nintai/monthly/new
+    
+    fBackup $OLDDIR $NEWDIR
+    echo "nintai - monthly backup [OK]"
+}
+
+
+fUsage()
+{
+    echo "Usage: bu-nintai"
+    exit 1
+}
+
+case $# in
+0)
+    DOW=`date +%u`
+    DOM=`date +%d`
+    fBackupDaily
+    if [ "$DOW" = "1" ];
+    then
+fBackupWeekly
+    fi
+if [ "$DOM" = "01" ];
+    then
+fBackupMonthly
+    fi
+    ;;
+*)
+    fUsage
+    ;;
+esac
