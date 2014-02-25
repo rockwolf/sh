@@ -9,14 +9,16 @@ Usage()
     echo "report_expenses_per_month.sh <ledger db file> [<expense category name>]"
 }
 
+#TODO: add format string: -F '%A|%D|%t\n'
+#but first check what the normal output is.
 case $# in
 1)
     #ledger -f $1 --pendantic -M register expenses
-    ledger -f $1 register --monthly --date-format $DTFORMAT -Equity -^Assets expenses
+    ledger -f $1 register --monthly --period-sort --date-format $DTFORMAT -Equity -^Assets expenses
     ;;
 2) 
     #ledger -f $1 --pendantic -M register expenses:$2
-    ledger -f $1 register --monthly --date-format $DTFORMAT -Equity -^Assets expenses:$2
+    ledger -f $1 register --monthly --period-sort --date-format $DTFORMAT -Equity -^Assets expenses:$2
     ;;
 *)
     Usage()
