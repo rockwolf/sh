@@ -16,7 +16,7 @@ case $# in
     ;;
 2) 
     #ledger -f $1 --pendantic -Y register expenses:$2
-    ledger -f $1 register --yearly --period-sort $DTFORMAT -Equity -^Assets expenses:$2
+    ledger -f $1 register --yearly --period-sort -Equity -^Assets expenses:$2
     ;;
 *)
     Usage()
