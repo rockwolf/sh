@@ -1,29 +1,31 @@
 #!/bin/sh
 #
 # Author: rockwolf
-# Date: 2010-12-29
-#
-# Creates a backup of the nintai dir
+# Date: 2014-03-03
+# 
+# Creates a backup of the prd dir
 #
 
 DIR=/home/rockwolf/nintai
+PREFIX=/mnt/bak
+NAME=nintai
 
 fBackupDaily()
 {
-    OLDDIR=/mnt/bak/nintai/daily/old
-    NEWDIR=/mnt/bak/nintai/daily/new
+    OLDDIR=$PREFIX/daily/old
+    NEWDIR=$PREFIX/daily/new
     
     fBackup $OLDDIR $NEWDIR
-    echo "nintai - daily backup [OK]"
+    echo $NAME"- daily backup [OK]"
 }
 
 fBackupWeekly()
 {
-    OLDDIR=/mnt/D/bak/nintai/weekly/old
-    NEWDIR=/mnt/D/bak/nintai/weekly/new
+    OLDDIR=$PREFIX/weekly/old
+    NEWDIR=$PREFIX/weekly/new
     
     fBackup $OLDDIR $NEWDIR
-    echo "nintai - weekly backup [OK]"
+    echo $NAME"- weekly backup [OK]"
 }
 
 fBackup()
@@ -35,37 +37,37 @@ fBackup()
     mv $NEWDIR/*.tar.gz $OLDDIR
 
     ### make backup
-    tar czf $NEWDIR/doc`date +%Y-%m-%d`.tar.gz $DIR
+    tar czf $NEWDIR/$NAME`date +%Y-%m-%d`.tar.gz $DIR
 }
 
 fBackupMonthly()
 {
-    OLDDIR=/mnt/bak/nintai/monthly/old
-    NEWDIR=/mnt/bak/nintai/monthly/new
+    OLDDIR=$PREFIX/monthly/old
+    NEWDIR=$PREFIX/monthly/new
     
     fBackup $OLDDIR $NEWDIR
-    echo "nintai - monthly backup [OK]"
+    echo $NAME" - monthly backup [OK]"
 }
 
 
 fUsage()
 {
-    echo "Usage: bu-nintai"
+    echo "Usage: bu-prd"
     exit 1
 }
 
 case $# in
 0)
+    fBackupDaily
     DOW=`date +%u`
     DOM=`date +%d`
-    fBackupDaily
     if [ "$DOW" = "1" ];
     then
-fBackupWeekly
+        fBackupWeekly
     fi
-if [ "$DOM" = "01" ];
+    if [ "$DOM" = "01" ];
     then
-fBackupMonthly
+        fBackupMonthly
     fi
     ;;
 *)
