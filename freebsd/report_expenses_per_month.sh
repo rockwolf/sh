@@ -12,11 +12,11 @@ Usage()
 case $# in
 1)
     #ledger -f $1 --pendantic -M register expenses
-    ledger -f $1 register --monthly --period-sort -Equity -^Assets expenses
+    ledger -f $1 -y "%Y-%m" -s reg --monthly --period-sort -Equity -^Assets expenses
     ;;
 2) 
     #ledger -f $1 --pendantic -M register expenses:$2
-    ledger -f $1 register --monthly --period-sort -Equity -^Assets expenses:$2
+    ledger -f $1 -y "%Y-%m" -s reg --monthly --period-sort -Equity -^Assets expenses:$2
     ;;
 *)
     Usage()
