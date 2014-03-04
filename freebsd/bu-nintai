@@ -15,8 +15,11 @@ fBackupDaily()
     OLDDIR=$PREFIX/daily/old
     NEWDIR=$PREFIX/daily/new
     
-    fBackup $OLDDIR $NEWDIR
+    fClearBackup $OLDDIR $NEWDIR
     echo $NAME"- daily backup [OK]"
+    
+    ### make backup
+    tar czf $NEWDIR/$NAME`date +%Y-%m-%d`.tar.gz $DIR
 }
 
 fBackupWeekly()
@@ -24,18 +27,9 @@ fBackupWeekly()
     OLDDIR=$PREFIX/weekly/old
     NEWDIR=$PREFIX/weekly/new
     
-    fBackup $OLDDIR $NEWDIR
+    fClearBackup $OLDDIR $NEWDIR
     echo $NAME"- weekly backup [OK]"
-}
-
-fBackup()
-{
-    ### remove previous bak-ups
-    rm $OLDDIR/*.tar.gz
-
-    ### move current backup from new to old
-    mv $NEWDIR/*.tar.gz $OLDDIR
-
+    
     ### make backup
     tar czf $NEWDIR/$NAME`date +%Y-%m-%d`.tar.gz $DIR
 }
@@ -45,10 +39,21 @@ fBackupMonthly()
     OLDDIR=$PREFIX/monthly/old
     NEWDIR=$PREFIX/monthly/new
     
-    fBackup $OLDDIR $NEWDIR
+    fClearBackup $OLDDIR $NEWDIR
     echo $NAME" - monthly backup [OK]"
+    
+    ### make backup
+    tar czf $NEWDIR/$NAME`date +%Y-%m-%d`.tar.gz $DIR
 }
 
+fClearBackup()
+{
+    ### remove previous bak-ups
+    rm $OLDDIR/*.tar.gz
+
+    ### move current backup from new to old
+    mv $NEWDIR/*.tar.gz $OLDDIR
+}
 
 fUsage()
 {
