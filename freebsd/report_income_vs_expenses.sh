@@ -9,11 +9,12 @@ Usage()
 
 case $# in
 1)
-    ledger -f $1 -y "%Y" -AYs reg --yearly --period-sort -Equity -^assets expenses income
+    #-y "%Y"
+    #ledger -f $1 --real -s -B -d "T&l<=1" bal --yearly --period-sort -Equity -^assets expenses income
+    ledger -f $1 --real -s -d "T&l<=1" bal -Equity -^assets expenses income
     ;;
 2) 
-    #TODO: filter for given year
-    ledger -f $1 -y "%Y" reg --yearly --period-sort -Equity -^assets expenses income
+    ledger -f $1 --real -s -p $2 bal --yearly --period-sort -Equity -^assets expenses income
     ;;
 *)
     Usage()
