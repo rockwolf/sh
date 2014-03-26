@@ -14,7 +14,7 @@ case $# in
     ledger -f $1 --real -s -d "T&l<=1" bal -Equity -^assets expenses income
     ;;
 2) 
-    ledger -f $1 --real -s -p $2 bal --yearly --period-sort -Equity -^assets expenses income
+    ledger -f $1 --real -s -p $2 -d "T&l<=1" bal --yearly --period-sort -Equity -^assets expenses income
     ;;
 *)
     Usage()
