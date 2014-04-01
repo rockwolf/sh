@@ -7,12 +7,13 @@
 #
 
 DIR=/home/rockwolf/nintai
-PREFIX=/mnt/bak
-NAME=nintai
+PREFIX=/mnt/data01/bak/nintai
 USAGE="Usage: bu-nintai"
 OK="backup [OK]"
-DIR1=prd
-DIR2=tst
+DIR1=/home/rockwolf/nintai/prd
+NAME1=prd
+DIR2=/home/rockwolf/nintai/tst
+NAME2=tst
 
 fBackupDaily()
 {
@@ -20,11 +21,12 @@ fBackupDaily()
     NEWDIR=$PREFIX/daily/new
     
     fClearBackup $OLDDIR $NEWDIR
-    echo $NAME" - daily "$OK
+    echo $NAME1" - daily "$OK
+    echo $NAME2" - daily "$OK
     
     ### make backup
-    tar czf $NEWDIR/$NAME`date +%Y-%m-%d`.tar.gz $DIR1
-    tar czf $NEWDIR/$NAME`date +%Y-%m-%d`.tar.gz $DIR2
+    tar czf $NEWDIR/$NAME1`date +%Y-%m-%d`.tar.gz $DIR1
+    tar czf $NEWDIR/$NAME2`date +%Y-%m-%d`.tar.gz $DIR2
 }
 
 fBackupWeekly()
@@ -33,11 +35,12 @@ fBackupWeekly()
     NEWDIR=$PREFIX/weekly/new
     
     fClearBackup $OLDDIR $NEWDIR
-    echo $NAME" - weekly "$OK
+    echo $NAME1" - weekly "$OK
+    echo $NAME2" - weekly "$OK
     
     ### make backup
-    tar czf $NEWDIR/$NAME`date +%Y-%m-%d`.tar.gz $DIR1
-    tar czf $NEWDIR/$NAME`date +%Y-%m-%d`.tar.gz $DIR2
+    tar czf $NEWDIR/$NAME1`date +%Y-%m-%d`.tar.gz $DIR1
+    tar czf $NEWDIR/$NAME2`date +%Y-%m-%d`.tar.gz $DIR2
 }
 
 fBackupMonthly()
@@ -46,11 +49,12 @@ fBackupMonthly()
     NEWDIR=$PREFIX/monthly/new
     
     fClearBackup $OLDDIR $NEWDIR
-    echo $NAME" - monthly "$OK
+    echo $NAME1" - monthly "$OK
+    echo $NAME2" - monthly "$OK
     
     ### make backup
-    tar czf $NEWDIR/$NAME`date +%Y-%m-%d`.tar.gz $DIR1
-    tar czf $NEWDIR/$NAME`date +%Y-%m-%d`.tar.gz $DIR2
+    tar czf $NEWDIR/$NAME1`date +%Y-%m-%d`.tar.gz $DIR1
+    tar czf $NEWDIR/$NAME2`date +%Y-%m-%d`.tar.gz $DIR2
 }
 
 fClearBackup()
