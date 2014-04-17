@@ -19,6 +19,10 @@ case $# in
     report_income_vs_expenses.sh $1 $2 > $DAT_INCOME_VS_EXPENSES
     python $PLOT_INCOME_VS_EXPENSES $DAT_INCOME_VS_EXPENSES $2
     ;;
+3)
+    report_income_vs_expenses.sh $1 $2 $3 > $DAT_INCOME_VS_EXPENSES
+    python $PLOT_INCOME_VS_EXPENSES $DAT_INCOME_VS_EXPENSES $2 $3
+    ;;
 *)
     Usage
     exit 1
