@@ -7,7 +7,8 @@ PLOT_INCOME_VS_EXPENSES="$HOME/dev/python/ledgerplot/plot_income_vs_expenses.py"
 Usage()
 {
     echo "Usage:"
-    echo "    $0 <ledger db file> [<year>]"
+    echo "    $0 <ledger db file> [<year>|<start date> <end date>]"
+    echo "    Note: start- and enddate should be in YYYY/MM/DD format."
 }
 
 case $# in
