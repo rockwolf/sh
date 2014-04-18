@@ -27,7 +27,7 @@ case $# in
     ;;
 3)
     # Plot all data for the given period.
-    ledger -f $1 --real -s -d "T&l<=1" -b $2 -e $3 bal --period-sort --monthly -Equity -^assets expenses income
+    ledger -f $1 --real -s -d "T&l<=1" --begin $2 --end $3 bal --period-sort --monthly -Equity -^assets expenses income
     ;;
 4)
     if [ "$4" = "total" ];
