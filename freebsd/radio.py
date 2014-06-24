@@ -46,6 +46,9 @@ radiostations = {#name:(address,homepage),
         'catalunya'
         :('http://www.catradio.cat/directes/catradio_http.m3u',
             'catalunya radio'),
+        'catmusica'
+        :('http://www.catmusica.cat/directes/catmusica_http.m3u',
+            'catmusica'),
         'blues'
         :('http://www.loudcity.com/launch?file=pls&id=1773&playid=6253201207040831551773',
             'blues'),
