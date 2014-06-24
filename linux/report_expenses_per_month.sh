@@ -19,7 +19,7 @@ case $# in
     ledger -f $1 -y "%Y-%m" -s reg --monthly --period-sort -Equity -^Assets expenses:$2
     ;;
 *)
-    Usage()
+    Usage
     exit 1
     ;;
 esac
