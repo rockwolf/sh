@@ -40,7 +40,7 @@ case $# in
     fi
     ;;
 *)
-    Usage()
-    exit 1
+    Usage
     ;;
 esac
+exit 1
