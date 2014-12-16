@@ -5,5 +5,5 @@
 #DISPLAY=:0.0 exec dwm
 exec dwm
 #exec mwm
-exec xmonad
+#exec xmonad
 #exec spectrwm

@@ -24,7 +24,8 @@ PACDIR=/home/rockwolf/doc/current/wallpapers/pacgraph
 
 #DISPLAY=:0.0 /usr/bin/feh --bg-scale $OTHERDIR/dreamforest_3360x1050.jpg
 #feh --bg-scale $OTHERDIR/actress_funny_game_of_thrones_arya_stark_maisie_williams_1900x1285_wallpaper_Wallpaper_1600x1200.jpg
-feh --bg-scale $OTHERDIR/ma_20140904_V001_bushido_seven_white.png
+feh --bg-scale $OTHERDIR/island_peach.png
+#ma_20140904_V001_bushido_seven_white.png
 #DISPLAY=:0.1 /usr/bin/feh --bg-scale $WALLDIR/Hokkaido3.jpg
 #DISPLAY=:0.1 /usr/bin/feh --bg-scale $OTHERDIR/1440_900_20091116100708821363.jpg
 #Shore22880x900.jpg
