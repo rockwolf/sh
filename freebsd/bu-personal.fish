@@ -1,23 +1,24 @@
 #!/usr/local/bin/fish
-#
-# Author: Andy Nagels`
+
+################################################################################
+# Author: Andy Nagels
 # Date: 2015-03-04
 #
 # bu-personal.fish:
 # Creates a backup of the doc and arc dir.
+################################################################################
 
-# TODO: rewrite this syntax to fish syntax
-DIR=/home/rockwolf/
-PREFIX=/mnt/data01/bak/personal
-USAGE="Usage: bu-personal"
-OK="backup [OK]"
-DIR1=/home/rockwolf/arc
-NAME1=arc
-DIR2=/home/rockwolf/doc
-NAME2=doc
+# TODO: finish rewrite this syntax to fish syntax
+set DIR /home/rockwolf/
+set PREFIX /mnt/data01/bak/personal
+set USAGE "Usage: bu-personal"
+set OK "backup [OK]"
+set DIR1 /home/rockwolf/arc
+set NAME1 arc
+set DIR2 /home/rockwolf/doc
+set NAME2 doc
 
-fBackupDaily()
-{
+function fBackupDaily()
     OLDDIR=$PREFIX/daily/old
     NEWDIR=$PREFIX/daily/new
     
@@ -28,7 +29,7 @@ fBackupDaily()
     ### make backup
     tar czf $NEWDIR/$NAME1`date +%Y-%m-%d`.tar.gz $DIR1
     tar czf $NEWDIR/$NAME2`date +%Y-%m-%d`.tar.gz $DIR2
-}
+end
 
 fBackupWeekly()
 {
