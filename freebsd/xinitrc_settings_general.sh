@@ -8,6 +8,6 @@
 # Load general settings like keyboard-layout, Xresources, etc. in xinitrc.
 ################################################################################
 
-setxkbmap us -variant colemak &
+setxkbmap us -variant colemak
 xrdb -nocpp -merge ~/.Xresources
 xset s off
