@@ -8,14 +8,11 @@
 # to keep the screen from blanking when watching movies on the web.
 # Ctr+C to quit.
 
-# TODO: convert this to fish syntax
-INTERVAL=300 #interval in seconds
+set INTERVAL 300 # interval in seconds
 
-while true;
-do
-    #xsendkeys Shift_L
+while true
     swarp 1460 20
     sleep $INTERVAL
     swarp 1490 50
     sleep $INTERVAL
-done;
+end
