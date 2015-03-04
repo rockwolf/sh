@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# Author: rockwolf
-# Date: 2014-03-03
+# Author: Andy Nagels
+# Date: 2015-03-04
 # 
+# bu-nintai.sh:
 # Creates a backup of the prd dir
-#
 
 DIR=/home/rockwolf/nintai
 PREFIX=/mnt/data01/bak/nintai
