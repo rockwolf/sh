@@ -1,10 +1,12 @@
 #!/bin/sh
-#
+
+################################################################################
 # Author: Andy Nagels
 # Date: 2015-03-04
 #
 # bu-nintai.fish:
 # Creates a backup of the nintai prd and tst dirs.
+################################################################################
 
 # TODO: rewrite this syntax to fish syntax
 DIR=/home/rockwolf/nintai
