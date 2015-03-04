@@ -16,3 +16,6 @@ export LANG=ja_JP.UTF-8 LLC_ALL=ja_JP.UTF-8
 export GTK_IM_MODULE='uim'
 export QT_IM_MODULE='uim'
 export XMODIFIERS=@im='uim'
+
+# Start uim-xim for Japanese language input.
+uim-xim
