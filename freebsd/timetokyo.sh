@@ -6,6 +6,7 @@
 #
 # timetokyo.sh:
 # Script that shows clocks in different timezones.
+# Used for display in DWM's status bar.
 ################################################################################
 
 DATEFORMAT="%Y-%m-%d"
