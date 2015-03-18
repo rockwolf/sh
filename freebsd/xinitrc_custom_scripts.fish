@@ -2,12 +2,12 @@
 
 ################################################################################
 # Author: Andy Nagels
-# Date: 2015-03-04
+# Date: 2015-03-18
 #
-# xinitrc_custom_scripts.sh:
+# xinitrc_custom_scripts.fish:
 # Execute custom scripts and applications in xinitrc.
 ################################################################################
 
 #urxvtd &
-wallpaper.sh
-timetokyo.sh
+wallpaper.fish
+timetokyo.fish
