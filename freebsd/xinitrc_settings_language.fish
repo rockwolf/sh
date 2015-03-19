@@ -12,10 +12,11 @@
 #set -x LANG=es_ES.ISO8859-1 LLC_ALL=es_ES.ISO8859-1
 #set -x LANG=es_ES.UTF-8 LLC_ALL=es_ES.UTF-8
 
-set -x LANG=ja_JP.UTF-8 LLC_ALL=ja_JP.UTF-8
-set -x GTK_IM_MODULE='uim'
-set -x QT_IM_MODULE='uim'
-set -x XMODIFIERS=@im='uim'
+set -x LANG "ja_JP.UTF-8"
+set -x LLC_ALL "ja_JP.UTF-8"
+set -x GTK_IM_MODULE "uim"
+set -x QT_IM_MODULE "uim"
+set -x XMODIFIERS "@im='uim'"
 
 # Start uim-xim for Japanese language input.
 uim-xim
