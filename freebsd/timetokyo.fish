@@ -16,7 +16,7 @@ while true
     set VAR0 (env TZ="Europe/Brussels" date +$DATEFORMAT)
     set VAR1 (env TZ="Europe/Brussels" date +$TIMEFORMAT)
     set VAR2 (env TZ="Asia/Tokyo" date +$TIMEFORMAT)
-    set VAR3 (env TZ="US/Eastern" date +$TIMEFORMAT)
+    set VAR3 (env TZ="America/New_York" date +$TIMEFORMAT)
     set VAR4 (env TZ="GMT" date +$TIMEFORMAT)
     xsetroot -name "[VL $VAR0][US $VAR3 | VL $VAR1 | 日本 $VAR2 | GMT $VAR4]"
     sleep 60

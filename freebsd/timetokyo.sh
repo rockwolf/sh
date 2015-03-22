@@ -16,7 +16,7 @@ while true; do
     VAR0=`TZ="Europe/Brussels" date +$DATEFORMAT`
     VAR1=`TZ="Europe/Brussels" date +$TIMEFORMAT`
     VAR2=`TZ="Asia/Tokyo" date +$TIMEFORMAT`
-    VAR3=`TZ="US/Eastern" date +$TIMEFORMAT`
+    VAR3=`TZ="America/New_York" date +$TIMEFORMAT`
     VAR4=`TZ="GMT" date +$TIMEFORMAT`
     xsetroot -name "[VL $VAR0][US $VAR3 | VL $VAR1 | 日本 $VAR2 | GMT $VAR4]"
     sleep 60
