@@ -11,3 +11,4 @@
 #urxvtd &
 wallpaper.fish
 timetokyo.fish
+stalonetray &

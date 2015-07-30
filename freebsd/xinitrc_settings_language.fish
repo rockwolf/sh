@@ -14,9 +14,14 @@
 
 set -x LANG "ja_JP.UTF-8"
 set -x LLC_ALL "ja_JP.UTF-8"
-set -x GTK_IM_MODULE "uim"
-set -x QT_IM_MODULE "uim"
-set -x XMODIFIERS "@im='uim'"
+set -x XIM "ibus"
+set -x GTK_IM_MODULE "ibus"
+set -x QT_IM_MODULE "xim"
+set -x XMODIFIERS "@im=ibus"
+set -x XIM_PROGRAM "ibus-daemon"
+set -x XIM_ARGS "-r --daemonize --xim"
 
 # Start uim-xim for Japanese language input.
-uim-xim
+# 2015-07-30: switched to ibus
+# See: http://redundancy.redundancy.org/fbsd_japanese.html
+#uim-xim

@@ -6,7 +6,8 @@
 # wallpaper.fish
 # Creates a backup of the doc and arc dir.
 
-set WALLDIR /home/rockwolf/img
+set WALLDIR /home/rockwolf/wall
 
 # sleep 6; and 
-feh --bg-scale $WALLDIR/island_peach.png
+#feh --bg-scale $WALLDIR/island_peach.png
+feh --bg-center $WALLDIR/trafalgar.png
