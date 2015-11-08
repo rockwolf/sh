@@ -49,12 +49,12 @@ radiostations = {#name:(address,homepage),
         'catmusica'
         :('http://www.catmusica.cat/directes/catmusica_http.m3u',
             'catmusica'),
-        'blues'
-        :('http://www.loudcity.com/launch?file=pls&id=1773&playid=6253201207040831551773',
-            'blues'),
-        'country'
-        :('http://www.loudcity.com/launch?file=pls&id=3386&playid=6253201207040833223386',
-            'country'),
+        'sveriges-p4'
+        :('http://sverigesradio.se/topsy/direkt/1607-hi-mp3.pls',
+            'sveriges-p4'),
+        'euskara'
+        :('http://groove.wavestreamer.com:7429/listen.m3u',
+            'euskara'),
 		'grandes':('mms://200.42.92.40/grandesdelrock','Grandes Del Rock - http://www.la100.com.ar'),
 		'metal':('mms://200.42.92.40/heavymetal','Heavy Metal - http://www.la100.com.ar'),
         'wwuz':('http://www.classicrock969.com/WWUZstreaming/play.ram','classick rock 96.9 WWUZ'),

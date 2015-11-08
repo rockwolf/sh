@@ -25,3 +25,4 @@ set -x XIM_ARGS "-r --daemonize --xim"
 # 2015-07-30: switched to ibus
 # See: http://redundancy.redundancy.org/fbsd_japanese.html
 #uim-xim
+ibus-daemon -r --daemonize --xim
