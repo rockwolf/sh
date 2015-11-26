@@ -8,7 +8,6 @@
 # Creates a backup of the nintai prd and tst dirs.
 ################################################################################
 
-# TODO: rewrite this syntax to fish syntax
 set DIR /home/rockwolf/nintai
 set PREFIX /mnt/data01/bak/nintai
 set USAGE "Usage: bu-nintai"
