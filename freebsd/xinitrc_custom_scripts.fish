@@ -8,6 +8,9 @@
 # Execute custom scripts and applications in xinitrc.
 ################################################################################
 
+# aliases
+alias gcc "gcc48"
+
 #urxvtd &
 wallpaper.fish
 timetokyo.fish
