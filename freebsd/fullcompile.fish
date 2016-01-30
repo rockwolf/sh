@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/usr/local/bin/fish
 
 ################################################################################
 # Author: Andy Nagels
 # Date: 2015-03-04
 #
-# fullcompile.sh:
+# fullcompile:
 # Compiles a latex document, twice.
 # Note: the parameter should be the name of the document, without the extension!
 ################################################################################
