@@ -8,10 +8,11 @@
 # Sets the wallpaper.
 ################################################################################
 
-set WALLDIR /home/rockwolf/wall
+#set WALLDIR /home/rockwolf/wall
 
 # sleep 6; and 
 #feh --bg-scale $WALLDIR/island_peach.png
 #feh --bg-center $WALLDIR/trafalgar.png
 #feh --bg-fill $WALLDIR/freebsd1440x900jp.jpg
-feh --bg-scale $WALLDIR/mtg_colors.jpg
+#feh --bg-scale $WALLDIR/mtg_colors.jpg
+nitrogen --restore
