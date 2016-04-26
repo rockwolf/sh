@@ -37,6 +37,7 @@ from optparse import OptionParser
 
 radiostations = {#name:(address,homepage),
         'furia' :('http://87.117.217.103:19462', 'Furia Metal Brasil'),
+        'rocknation' :('http://player.srvstm.com/player/19138/winamp.pls', 'Radio Rock Nation'),
 		'radio2' :('http://mp3.streampower.be/ra2ant-mid.mp3', 'radio 2 - antwerpen'),
         'brasil' :('http://189.1.162.125:8450', 'Rádio Brasil 2000'),
         'rio' :('http://99.198.112.59:80', 'Paul in Rio'),
