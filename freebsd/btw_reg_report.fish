@@ -76,6 +76,8 @@ function fParseArguments
       echo $TERMPREFIX"Q4 remove txt"
     case '*'
       # Check if valid month, otherwise unknown option error.
+      if $argv in januari februari march april may june july
+      # Note: this is getting complex, better use another language for it. Python? Lisp?
       echo Unknown option $argv.
       fUsage
   end
