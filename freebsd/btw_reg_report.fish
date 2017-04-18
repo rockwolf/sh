@@ -17,7 +17,7 @@
 # 4th quarter - from 10/01 until 31/12"
 # ledger -f ledger.dat --period "from 2015/10 until 2014/12" reg
 # Note: on debian, the version is lower and I have to use
-ledger -f ledger.dat -b "2016/06/01" -e "2016/07/01" reg | sort -n
+#ledger -f ledger.dat -b "2016/06/01" -e "2016/07/01" reg | sort -n
 
 set USAGE "Usage: btw_reg_report.fish [Q1|Q2|Q3|Q4|month|-h]"
 set -x TERMPREFIX ">>> "
@@ -28,26 +28,26 @@ function fUsage
 end
 
 function fCmdGetExportName
-  reg_(date +%Y%m%d)_V001_btw_Q1
-  Q2
-  Q3
-  Q4
-  januari
-  februari
-  march
-  april
-  may
-  june
-  july
-  august
-  september
-  oktober
-  november
-  december
+  #reg_(date +%Y%m%d)_V001_btw_Q1
+  #Q2
+  #Q3
+  #Q4
+  #januari
+  #februari
+  #march
+  #april
+  #may
+  #june
+  #july
+  #august
+  #september
+  #oktober
+  #november
+  #december
 end
 
 function fCmdExportToTxt
-    ledger -f ledger.dat -b "2016/06/01" -e "2016/07/01" reg | sort -n > reg_(date +%Y%m%d)_V001_btw_Q1
+    ledger -f ledger.dat -b "2017/01/01" -e "2017/04/01" reg | sort -n > reg_(date +%Y%m%d)_V001_btw_Q1
 end
 
 function fParseArguments
