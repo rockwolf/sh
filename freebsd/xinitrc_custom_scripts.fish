@@ -12,3 +12,5 @@ urxvtd &
 wallpaper.fish
 timetokyo.fish
 stalonetray &
+xmodmap /usr/local/rc/xmodmap/xmodmaprc
+xmodmap -e "keycode 115 = F20" # So StumpWM can use Super_L as a prefix key
