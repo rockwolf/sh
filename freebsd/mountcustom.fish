@@ -14,12 +14,18 @@ set KEYLOCATION "/bootdir/boot/"
 
 switch $argv[1]
 case "-h"
-    echo "mountcustom.fish [-h|tar00|data01]"
+    echo "mountcustom.fish [-h|sea00|tar00|data01]"
     echo "Note: Needs to be run as root."
 case "tar00"
     echo Mounting tar00...
     geli attach -k "$KEYLOCATION/encryption_tar00.key" "/dev/da0p1"
     zpool import tar00
+    echo Done. 
+    true
+case "sea00"
+    echo Mounting sea00...
+    geli attach -k "$KEYLOCATION/encryption_sea00.key" "/dev/da0p1"
+    zpool import sea00
     echo Done. 
     true
 case "data01"
