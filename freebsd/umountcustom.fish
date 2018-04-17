@@ -21,6 +21,12 @@ case "tar00"
     geli detach /dev/da0p1
     echo Done. 
     true
+case "sea00"
+    echo Unmounting sea00...
+    zpool export sea00
+    geli detach /dev/da0p1
+    echo Done. 
+    true
 case "data01"
     echo Unmounting data01...
     zpool export data01
