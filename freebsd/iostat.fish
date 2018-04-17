@@ -9,7 +9,7 @@
 # but in a loop with refresh.
 ################################################################################
 
-set INTERVAL 2 # interval in seconds
+set INTERVAL 5 # interval in seconds
 
 while true
     clear
