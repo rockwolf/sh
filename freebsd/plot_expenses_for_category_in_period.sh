@@ -3,7 +3,7 @@
 # Note: follow by e.g.: expenses -p oct
 
 # TODO: add usage file income|expenses [period identifier]
-ledger -f $1 -J --strict -X EUR bal "$2" --sort="-abs(amount)" --flat --no-total --plot-total-format="%(partial_account(options.flat)) %(abs(quantity(scrub(total))))\n" > ledgeroutput1.tmp
+ledger -f $1 --strict --real -X EUR -J bal "$2" --sort="-abs(amount)" --flat --no-total --plot-total-format="%(partial_account(options.flat)) %(abs(quantity(scrub(display_total))))\n" > ledgeroutput1.tmp
 
 (cat <<EOF) | gnuplot
   set terminal pngcairo size 1920,1080 enhanced font 'Inconsolata,10'
@@ -20,4 +20,4 @@ ledger -f $1 -J --strict -X EUR bal "$2" --sort="-abs(amount)" --flat --no-total
   plot "ledgeroutput1.tmp" using 2:xticlabels(1) notitle linecolor rgb "light-green", '' using 0:2:2 with labels font "Inconsolata,8" offset 0,0.5 textcolor linestyle 0 notitle
 EOF
 
-#rm ledgeroutput*.tmp
+rm ledgeroutput*.tmp

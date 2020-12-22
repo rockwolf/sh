@@ -1,8 +1,10 @@
 #!/bin/sh
 
 #ledger -f $FILE --strict --real -X EUR -H -j reg ^Income --collapse --plot-amount-format="%(format_date(date, \"%Y-%m-%d\")) %(abs(quantity(scrub(display_amount))))\n" > ledgeroutput1.tmp
-ledger -f $1 --strict -X EUR -H -J reg income -Y --collapse --no-rounding --plot-total-format "%(format_date(date, \"%Y-%m-%d\"))  %(roundto(scrub(display_amount), 1))\n" > ledgeroutput1.tmp
-ledger -f $1 --strict -X EUR -H -J reg expenses -Y --collapse --no-rounding --plot-total-format "%(format_date(date, \"%Y-%m-%d\"))  %(roundto(scrub(display_amount), 1))\n" > ledgeroutput2.tmp
+#ledger -f $1 --strict -X EUR --real -J reg income -Y --collapse --no-rounding --plot-total-format "%(format_date(date, \"%Y-%m-%d\"))  %(roundto(scrub(display_amount), 1))\n" > ledgeroutput1.tmp
+#ledger -f $1 --strict -X EUR --real -J reg expenses -Y --collapse --no-rounding --plot-total-format "%(format_date(date, \"%Y-%m-%d\"))  %(roundto(scrub(display_amount), 1))\n" > ledgeroutput2.tmp
+ledger -f $1 --strict -X EUR --real -J reg income -Y --collapse --no-rounding --plot-total-format "%(format_date(date, \"%Y-%m-%d\"))  %(roundto(scrub(display_amount), 10))\n" > ledgeroutput1.tmp
+ledger -f $1 --strict -X EUR --real -J reg expenses -Y --collapse --no-rounding --plot-total-format "%(format_date(date, \"%Y-%m-%d\"))  %(roundto(scrub(display_amount), 10))\n" > ledgeroutput2.tmp
 
 (cat <<EOF) | gnuplot
   set terminal pngcairo size 1920,1080 enhanced font 'Inconsolata,10'
