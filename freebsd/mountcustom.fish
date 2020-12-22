@@ -35,6 +35,29 @@ case "data01"
     zpool import data01
     echo Done. 
     true
+case "max03"
+    echo Mounting max03...
+    geli attach /dev/da0p1
+    zpool import movies00
+    echo Done. 
+    true
+case "max04"
+    echo Mounting max04...
+    geli attach /dev/da0p1
+    zpool import max04 
+    echo Done. 
+    true
+case "max05"
+    echo Mounting max05...
+    geli attach /dev/da0p1
+    zpool import max05 
+    echo Done. 
+    true
+case "android"
+    echo Mounting android...
+    simple-mtpfs /mnt/android -o allow_other
+    echo Done.
+    true
 case '*'
     echo Unknown option $argv[1].
     false

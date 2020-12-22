@@ -13,8 +13,10 @@
 set INTERVAL 300 # interval in seconds
 
 while true
+    #swarp 20 20
     swarp 1460 20
     sleep $INTERVAL
-    swarp 1490 50
+    swarp 30 50
+    #swarp 1490 50
     sleep $INTERVAL
 end
