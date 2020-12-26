@@ -1,3 +1,0 @@
-#!/bin/sh
-
-for i in *.$1; do mv "$i" `echo $i | tr ' ' '_'`; done

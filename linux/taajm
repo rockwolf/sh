@@ -1,5 +1,0 @@
-#!/bin/sh
-#dclock -bg black -fg green -noblink -nofade -seconds -led_off black -geometry 1024x738+0+0 -tails -thickness 0.18 -date '%A(%u) %e %B %Y (%Cth century)'
-TZ="Amerika/New_York" xclock -digital -twentyfour -fg blue -bg white -brief -geometry 60x30+1258+0&
-xclock -digital -twentyfour -fg black -bg yellow -brief -geometry 60x30+1319+0&
-TZ="Asia/Tokyo" xclock -digital -twentyfour -fg red -bg white -brief -geometry 60x30+1380+0&

@@ -1,5 +1,0 @@
-#!/bin/sh
-
-echo "Writing file $1"
-#cdrecord -v -eject speed=8 dev=1000,1,0 $1
-wodim -v speed=8 dev=4,0,0 -eject $1

@@ -1,9 +1,0 @@
-#!/bin/sh
-while true; do
-    VAR1=`TZ="Europe/Brussels" date +"%Y-%m-%d/%H:%M"`
-    VAR2=`TZ="Asia/Tokyo" date +"%Y-%m-%d/%H:%M"`
-    VAR3=`TZ="US/Eastern" date +"%Y-%m-%d/%H:%M"`
-    VAR4=`TZ="Australia/Sydney" date +"%Y-%m-%d/%H:%M"`
-    xsetroot -name "US:$VAR3  VL:$VAR1  日本:$VAR2 AU:$VAR4"
-    sleep 1m
-done

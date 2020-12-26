@@ -1,6 +1,0 @@
-#!/bin/sh
-#root-tail --shade -f -wordwrap -noinitial -whole -color cyan  -g 260x286+750+310 /var/log/messages.log
-root-tail --shade -f --wordwrap --noinitial --whole --color red --minspace -g 150x150+3+610 /var/log/messages.log
-root-tail --shade -f --wordwrap --noinitial --whole --color green  -g 150x150+3+750 /home/rockwolf_irc/.irssi/fnotify
-#root-tail --shade -f -wordwrap -noinitial -whole -color yellow  -g 260x48+750+510 /home/rockwolf_irc/.irssi/fnotify
-#root-tail -font fixed -f -wordwrap -noinitial -whole -color gray  -g 1024x41+0+487 /var/log/shorewall.log

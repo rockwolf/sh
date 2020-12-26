@@ -1,6 +1,0 @@
-#!/bin/sh
-echo "Starting teamspeak, dude..."
-LD_LIBRARY_PATH="/opt/teamspeak2-client:$LD_LIBRARY_PATH" esddsp /opt/teamspeak2-client/TeamSpeak.bin
-echo "Okelidokeli!"
-#aoss
-#artsdsp
