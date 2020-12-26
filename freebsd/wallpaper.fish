@@ -8,7 +8,7 @@
 # Sets the wallpaper.
 ################################################################################
 
-#set WALLDIR /home/rockwolf/wall
+#set WALLDIR /home/rockwolf/img/wallpaper
 
 # sleep 6; and 
 #feh --bg-scale $WALLDIR/island_peach.png

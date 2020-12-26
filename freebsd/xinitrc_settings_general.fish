@@ -11,3 +11,4 @@
 setxkbmap us -variant colemak
 xrdb -nocpp -merge ~/.Xresources
 xset s off
+wacom_config.fish
