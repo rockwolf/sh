@@ -9,7 +9,6 @@
 ################################################################################
 
 urxvtd &
-xmodmap /usr/local/rc/xmodmap/xmodmaprc
 wallpaper.fish &
 timetokyo.fish &
 emacs --daemon &
