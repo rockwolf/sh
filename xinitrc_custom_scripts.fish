@@ -10,5 +10,5 @@
 
 urxvtd &
 wallpaper.fish &
-timetokyo.fish &
-emacs --daemon &
+#timetokyo.fish &
+#emacs --daemon &
