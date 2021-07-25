@@ -9,7 +9,7 @@
 # and loads the given ods with soffice.
 ################################################################################
 
-set DIR $HOME/doc
+set DIR $HOME/doc/nintai
 set ODS trade_20140311_V001_position_trading.ods
 
 cd $DIR
